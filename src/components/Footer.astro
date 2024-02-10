@@ -1,0 +1,53 @@
+---
+import Social from "./Socials.astro";
+const title = "Contacto";
+---
+
+<style>
+  footer {
+    display: inline;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+  }
+
+  ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    display: inline;
+    margin: 10px auto;
+  }
+  @media (max-width: 400px) {
+    ul {
+      flex-direction: column;
+    }
+  }
+</style>
+
+<footer>
+  <p>{title}</p>
+  <ul>
+    <li>
+      <Social platform="twitch" username="rickinillo7" />
+    </li>
+    <li>
+      <Social platform="github" username="JVLorCor" />
+    </li>
+    <li>
+      <Social platform="youtube" username="@RickiNillo7-fm8nm" />
+    </li>
+    <li>
+      <Social
+        platform="discord"
+        username="channels/1203428407367573544/1203428407858167870"
+      />
+    </li>
+  </ul>
+</footer>
+
+<!-- https://www.canva.com/design/DAF8Y5dj_zA/rkpl5qO5SuY3lvtNhDwb4A/watch?utm_content=DAF8Y5dj_zA&utm_campaign=celebratory_first_publish&utm_medium=link&utm_source=editor_celebratory_first_publish -->
