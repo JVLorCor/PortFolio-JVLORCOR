@@ -4,13 +4,28 @@ const title = "JVLorCor";
 ---
 
 <BaseLayout title={title}>
-  <img src="../../public/me.webp" alt="" style="height: 100px; width:100px;">
+  <style>
+    li {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    img {
+      max-width: 100px;
+      height: auto;
+      margin-right: 1rem;
+    }
+  </style>
   <ul>
     <li>
-      <h2>Experiencia</h2>
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus voluptatum
-      praesentium ex hic sunt quam aliquam quibusdam, modi quo repudiandae asperiores
-      deleniti, nostrum tempora minus, cupiditate aperiam veritatis totam culpa.
+      <img src="../../public/me.webp" alt="" />
+      <div>
+        <h2>Experiencia</h2>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus voluptatum
+        praesentium ex hic sunt quam aliquam quibusdam, modi quo repudiandae asperiores
+        deleniti, nostrum tempora minus, cupiditate aperiam veritatis totam culpa.
+      </div>
     </li>
     <li>
       <h2>Skills</h2>
