@@ -24,35 +24,47 @@ const goal = 3;
 const skillColor = "navy";
 ---
 
-<BaseLayout>
-  <h1>{title}</h1>
-  <h2>... ¡y mi nuevo sitio Astro!</h2>
-  <p>He aquí algunos datos sobre mí:</p>
-  <ul>
-    <li>Me llamo {identity.Name}.</li>
-    <li>Vivo en {identity.country} y trabajo como {identity.occupation}.</li>
+<BaseLayout title={title}>
+  <div class="base-layout">
+    <h1>{title}</h1>
+    <h2>... ¡y mi nuevo sitio Astro!</h2>
+    <p>He aquí algunos datos sobre mí:</p>
+    <ul>
+      <li>Me llamo {identity.Name}.</li>
+      <li>Vivo en {identity.country} y trabajo como {identity.occupation}.</li>
+      {
+        identity.hobbies.length >= 5 && (
+          <li>
+            Mis aficiones son: {identity.hobbies[0]}, {identity.hobbies[1]},{" "}
+            {identity.hobbies[2]}, {identity.hobbies[3]} y la {identity.hobbies[4]}
+          </li>
+        )
+      }
+    </ul>
+    <p>Mis habilidades son:</p>
+    <ul>
+      {skills.map((skill) => <li class="skill">{skill}</li>)}
+    </ul>
+    {happy && <p>¡Estoy feliz de aprender Astro!</p>}
+    
+    {finished && <p>¡He terminado este tutorial!</p>}
+    
     {
-      identity.hobbies.length >= 5 && (
-        <li>
-          Mis aficiones son: {identity.hobbies[0]}, {identity.hobbies[1]},{" "}
-          {identity.hobbies[2]}, {identity.hobbies[3]} y la {identity.hobbies[4]}
-        </li>
+      goal === 3 ? (
+        <p>Mi objetivo es terminar en 3 días.</p>
+      ) : (
+        <p>Mi objetivo no son 3 días.</p>
       )
     }
-  </ul>
-  <p>Mis habilidades son:</p>
-  <ul>
-    {skills.map((skill) => <li class="skill">{skill}</li>)}
-  </ul>
-  {happy && <p>¡Estoy feliz de aprender Astro!</p>}
-  
-  {finished && <p>¡He terminado este tutorial!</p>}
-  
-  {
-    goal === 3 ? (
-      <p>Mi objetivo es terminar en 3 días.</p>
-    ) : (
-      <p>Mi objetivo no son 3 días.</p>
-    )
-  }
+  </div>
 </BaseLayout>
+
+<style>
+  .base-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+</style>
